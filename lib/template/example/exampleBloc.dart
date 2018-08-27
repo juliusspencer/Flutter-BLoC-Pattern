@@ -12,13 +12,11 @@ class ExampleBloc {
   }
 
   _handleAddition(ExampleItem item) {
-    _items.add(item);
-    _itemsSubject.add(_items);
+    _itemsSubject.add(_items..add(item));
   }
 
   _handleRemoval(ExampleItem item) {
-    _items.remove(item);
-    _itemsSubject.add(_items);
+    _itemsSubject.add(_items..remove(item));
   }
 
   void dispose(){
