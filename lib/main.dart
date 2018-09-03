@@ -5,9 +5,22 @@ import 'package:flutter_bloc_pattern/template/example/exampleBloc.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
 
+  @override
+  MyAppState createState() {
+    return new MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
   final ExampleBloc _exampleBloc = ExampleBloc();
+
+  @override
+  void dispose() {
+    _exampleBloc.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
